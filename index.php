@@ -1,7 +1,10 @@
 <?php
 session_start();
-$_Session;
+include("connection.php");
+include("function.php");
+$user_data = check_login($con);
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +14,6 @@ $_Session;
         <a href="logout.php">Logout</a>
         <h1> THIS IS THE INDEX PAGE</h1>
         <br>
-        Hello,username
+        Hello,<?php echo $user_data['user_name'];?>
     </body>
 </html>
